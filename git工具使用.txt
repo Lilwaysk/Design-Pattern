@@ -32,8 +32,8 @@ git中文件的几种状态
 已提交（Committed）：文件已经被提交到本地仓库，使用git push命令将文件推送到远程仓库
 
 git add 从未跟踪到已暂存      使用git add 文件名 将单个文件推到暂存区
-                            使用 git add . 将所有更改的文件推到暂存区
-git commit 从已暂存到已提交
+                             使用git add . 将所有更改的文件推到暂存区
+git commit 从已暂存到已提交   使用git commit -m "备注信息" 来提交到仓库 如果不用-m 则会进入vim编辑界面
 git push 从已提交到远程仓库
 git rm 从已暂存到未跟踪
 git reset 从已提交到已暂存
