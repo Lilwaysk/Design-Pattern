@@ -1,0 +1,40 @@
+git 分布式代码存储仓库
+
+git config --global user.name "Your Name"                // 用户名
+git config --global user.email "youremail@domain.com"    // 邮箱
+git config --global credentials.helper store             // 保存登陆状态
+git config --global --list                               // 查看配置
+
+
+创建一个仓库
+1.首先先创建一个空目录
+2.在目录中打开git bash
+3.初始化仓库 git init 或者 git init --bare
+
+克隆一个仓库
+1.在git bash中输入 git clone 仓库地址
+
+
+git中的工作区域和文件状态
+工作区：.git所在的目录
+暂存区：一般存放在.git目录下的index文件（.git/index）中，所以我们把暂存区看做是工作区中的一个阶段
+本地仓库：就是通过命令 git init 创建的仓库，它包含了完整的项目历史和元数据，是git存储代码和版本信息的主要位置
+远程仓库：远程仓库是托管在服务器上的代码仓库，可以理解为远程备份，远程仓库通常和本地仓库进行交互，如push、pull等操作。
+-> git add 工作区到暂存区
+-> git commit 暂存区到本地仓库
+-> git push 本地仓库到远程仓库
+
+
+git中文件的几种状态
+未跟踪（Untracked）：新添加的文件（未被git跟踪的文件），使用git add命令将新文件添加到暂存区
+已修改（Modified）：文件已经被修改，但还没有被添加到暂存区
+已暂存（Staged）：文件已经被添加到暂存区，使用git commit命令将文件提交到本地仓库
+已提交（Committed）：文件已经被提交到本地仓库，使用git push命令将文件推送到远程仓库
+
+git add 从未跟踪到已暂存      使用git add 文件名 将单个文件推到暂存区
+                            使用 git add . 将所有更改的文件推到暂存区
+git commit 从已暂存到已提交
+git push 从已提交到远程仓库
+git rm 从已暂存到未跟踪
+git reset 从已提交到已暂存
+git checkout 从已暂存到未修改
