@@ -41,3 +41,64 @@ git checkout 从已暂存到未修改
 
 
 分支介绍和基本操作
+git status 查看仓库状态
+git log 查看仓库提交历史积累 git log --oneline 查看简洁版提交历史
+git diff 查看文件修改内容
+
+
+git reset的三种模式
+git reset --soft   工作区保留 暂存区保留
+git reset --mixed  工作区保留 暂存区不保留
+git reset --hard   工作区不保留 暂存区不保留  
+git reset --soft HEAD^ 回退到上一个版本
+
+
+
+
+git diff 查看差异
+可以查看工作区，暂存区，本地仓库之间的差异
+git diff HEAD 查看工作区和本地仓库的差异
+git diff --cached 查看暂存区和本地仓库的差异
+git diff HEAD^ HEAD 查看最近两次提交的差异
+
+
+
+使用命令 git rm 删除文件
+git rm 文件名 删除暂存区文件
+git rm --cached 文件名 删除暂存区文件，保留工作区文件
+git rm -r* 递归删除某个目录下的所有子目录和文件
+
+
+.gitignore文件
+忽略文件，不提交到仓库中
+gitignore文件中每一行代表一个忽略规则，匹配规则如下：
+1.以斜杠“/”开头表示目录
+2.以星号“*”通配多个字符
+3.以问号“?”通配单个字符
+4.以方括号“[]”包含单个字符的匹配列表
+5.以叹号“!”表示取反
+例：
+# 忽略所有的 .a 文件
+*.a
+# 但跟踪 lib.a，即使前面有忽略规则
+!lib.a
+# 只忽略当前目录下的 TODO 文件，而不忽略 subdir/TODO
+/TODO
+# 忽略任何目录下名为 build 的文件夹
+build/
+# 忽略 doc/notes.txt，但不忽略 doc/server/arch.txt
+doc/*.txt
+# 忽略 doc/ 目录下的 .pdf 文件
+doc/**/*.pdf
+
+git clone 从远程仓库克隆到本地仓库
+
+git clone -b 分支名 仓库地址 克隆指定分支到本地仓库
+git push -u origin master 将本地master分支推送到远程仓库
+git pull 拉取远程仓库的代码
+
+关联本地仓库和远程仓库
+1.git remote add origin 仓库地址 
+2.git remote -v 查看当前仓库所对应的远程仓库的别名和地址
+3.git branch -M main 将当前分支重命名为main
+4.git push -u origin main 将本地main分支推送到远程仓库
