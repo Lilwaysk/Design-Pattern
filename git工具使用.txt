@@ -102,3 +102,18 @@ git pull 拉取远程仓库的代码
 2.git remote -v 查看当前仓库所对应的远程仓库的别名和地址
 3.git branch -M main 将当前分支重命名为main
 4.git push -u origin main 将本地main分支推送到远程仓库
+
+
+
+
+分支简介和基本操作
+git branch 查看本地分支
+git branch -r 查看远程分支
+git branch -a 查看本地和远程分支
+git branch 分支名 创建分支
+git checkout 分支名 切换分支
+git checkout -b 分支名 创建并切换分支
+git branch -d 分支名 删除分支
+git branch -D 分支名 强制删除分支
+git push origin --delete 分支名 删除远程分支
+git merge 分支名 合并分支
