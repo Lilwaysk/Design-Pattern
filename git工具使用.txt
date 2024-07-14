@@ -117,3 +117,21 @@ git branch -d 分支名 删除分支
 git branch -D 分支名 强制删除分支
 git push origin --delete 分支名 删除远程分支
 git merge 分支名 合并分支
+
+解决合并冲突
+总结
+两个分支未修改同一个文件的同一处位置：Git自动合并
+两个分支修改了同一个文件的同一处位置：产生冲突
+  解决方法：
+  1.手动修改冲突文件，合并冲突内容
+  2.添加暂存区
+  3.提交修改
+终止合并：当不想继续执行合并操作时可以使用下面的命令来终止合并过程：git merge --abort
+
+
+Rebase操作
+如果在main上进行rebase 分支会接到main上
+如果在分支上进行rebase main会接到分支上
+git rebase 分支名
+
+使用 git reset --hard 版本id 回退到某一版本
